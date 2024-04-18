@@ -1,6 +1,5 @@
 import MainClient from "@/components/pages/MainClient";
-import { ChildrenProps } from "@/type";
 
-export default function Home({ children }: ChildrenProps) {
+export default function Home() {
   return <MainClient />;
 }

@@ -10,7 +10,7 @@ const Profile = () => {
       </div>
       <div className="relative z-10 text-[30px] text-center">
         <p>Hello, My name is <span className="font-bold">KIM HYEON SOO</span>,</p>
-        <p>I'am a <span className="font-bold">Frontend developer</span></p>
+        <p>{`I'am a ${<span className="font-bold">Frontend developer</span>}`}</p>
       </div>
     </div>
   );
