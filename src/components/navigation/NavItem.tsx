@@ -20,7 +20,7 @@ const NavItem = ({selected, text, url, onClick}:ItemProps) => {
         {text}
         {selected && (
           <motion.div 
-            className={`absolute bg-white w-full top-full left-0 h-[2px] rounded-sm`}
+            className={`absolute bg-black w-full top-full left-0 h-[2px] rounded-sm`}
             layoutId='underline'
           />
         )}

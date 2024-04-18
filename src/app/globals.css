@@ -21,7 +21,6 @@ html {
 
 body {
   font-family: 'Nanum Gothic', sans-serif;
-  background-color: black;
-  color: white;
+  font-weight: 500;
 }
 

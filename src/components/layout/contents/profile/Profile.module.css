@@ -1,4 +1,4 @@
-.imageBackground {
+/* .imageBackground {
   width: 100%;
   height: calc(100vh - 50px);
   position: relative;
@@ -25,4 +25,32 @@
     border-radius: 100%;
     transform: translateX(17%) rotate(172deg);
     background-color: rgba(28, 34, 39, 0.7);
+} */
+
+.imageBackground {
+  position: relative;
+}
+
+.imageBackground::before,
+.imageBackground::after {
+  content: "";
+  position: absolute;
+}
+
+.imageBackground::before {
+  right: 35px;
+  top: 15px;
+  z-index: 0;
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  background-color: rgb(243 244 246);
+}
+
+.imageBackground::after{
+  z-index: -1;
+  left: 50px; top: 50px;
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  border: 10px solid rgb(168, 85, 247);
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
 }
