@@ -1,9 +1,14 @@
-import { ChildrenProps } from '@/type'
 import React from 'react'
 
-const Section = ({children}:ChildrenProps) => {
+interface SectionProps {
+    children: React.ReactNode;
+    id?: string;
+    className?: string;
+}
+
+const Section = ({children, id="", className=""}:SectionProps) => {
   return (
-    <section className="py-[10%] px-[30px] section-bg">{children}</section>
+    <section id={id} className={`py-[10%] px-[30px] section-bg ${className}`}>{children}</section>
   )
 }
 

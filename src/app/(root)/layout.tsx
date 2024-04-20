@@ -6,11 +6,11 @@ import React from 'react'
 
 const layout = ({children}:ChildrenProps) => {
   return (
-    <>
+    <div className='grid gap-y-[50px]'>
         <Header />
         <Contents>{children}</Contents>
         <Footer />
-    </>
+    </div>
   )
 }
 

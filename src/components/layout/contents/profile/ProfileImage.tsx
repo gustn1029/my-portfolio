@@ -3,6 +3,7 @@ import React from "react";
 import MyProfile from "../../../../../public/images/visual.jpg";
 import style from "@/components/layout/contents/profile/Profile.module.css";
 import { motion, Variants } from "framer-motion";
+import Section from "../Section";
 
 const ProfileImage = () => {
   const cardVariants: Variants = {
@@ -25,14 +26,18 @@ const ProfileImage = () => {
 
   return (
     <div className="flex w-full justify-between items-center overflow-hidden">
-      <div className="font-bold text-[2.5rem] pl-[100px]">
-        <p className="text-[1.5em]">Hello,</p>
-        <p>
-          My name is{" "}
-          <span className="text-purple-500 drop-shadow-sm animate-pulse">Kim Hyeon Soo</span>
-        </p>
-        <p>{`I'm a Frontend developer`}</p>
-      </div>
+      <Section>
+        <div className="font-bold text-[2.5rem]">
+          <p className="text-[1.5em]">Hello,</p>
+          <p>
+            My name is{" "}
+            <span className="text-purple-500 drop-shadow-sm animate-pulse">
+              Kim Hyeon Soo
+            </span>
+          </p>
+          <p>{`I'm a Frontend developer`}</p>
+        </div>
+      </Section>
       <motion.div
         initial="offscreen"
         whileInView="onscreen"

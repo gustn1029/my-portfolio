@@ -22,11 +22,11 @@ const Career = ({ careerList, width }: CareerProps) => {
             {el.period}
           </p>
           <div className="flex-1 flex flex-col gap-y-[10px]">
-            <div className="flex gap-x-[10px]">
+            <div className="flex gap-x-[10px] items-end">
               <strong style={{ width: `${width}px` }}>{el.company}</strong>
-              <span className="text-gray-400">{el.position}</span>
+              <span className="text-gray-400 text-[0.9rem]">{el.position}</span>
             </div>
-            <div className="grid gap-y-[5px]">
+            <div className="grid gap-y-[5px] text-[0.95rem]">
               {el.desc.map((item, idx) => (
                 <p key={`${item}_${idx}`}>{item}</p>
               ))}

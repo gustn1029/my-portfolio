@@ -44,7 +44,6 @@ const About = () => {
       position: "프론트엔드 개발자",
       desc: [
         "아이들 CMS 프로젝트 참여(백엔드, 프론트엔드)",
-        "사용 언어 - next.js, spring boot",
         "자사 서비스 견적이지 관리자 사이트 제작 참여(프론트엔드)",
         "전자정부프레임워크를 활용하여 공공기관 프로젝트 참여(프론트엔드)",
       ],
@@ -53,7 +52,7 @@ const About = () => {
   ];
 
   return (
-    <Section>
+    <Section id="about">
       <SectionTItle text="About Me" desc={`I'm a Frontend developer`} />
       <div className="mb-[30px]">
         <p>
@@ -62,7 +61,7 @@ const About = () => {
         </p>
         <p>프론트엔드 개발자 김현수입니다.</p>
       </div>
-      <article className="flex justify-between gap-x-[50px]">
+      <article className="flex justify-between gap-x-[70px]">
         <figure className="self-baseline max-w-[300px] p-[20px] bg-white rounded-lg shadow-md">
           <Image src={MyProfile} alt="my-image" />
         </figure>
