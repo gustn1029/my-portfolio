@@ -1,10 +1,12 @@
-import { ChildrenProps } from '@/type'
-import React from 'react'
+import { ChildrenProps } from "@/type";
+import React from "react";
 
-const Contents = ({children}:ChildrenProps) => {
+const Contents = ({ children }: ChildrenProps) => {
   return (
-    <main className='pt-[50px] px-10' id="home">{children}</main>
-  )
-}
+    <main className="pt-[50px] px-10" id="home">
+      {children}
+    </main>
+  );
+};
 
-export default Contents
+export default Contents;

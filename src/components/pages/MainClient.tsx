@@ -7,7 +7,7 @@ import About from "../layout/contents/about/About";
 const MainClient = () => {
   return (
     <>
-      <div>
+      <div className="grid gap-y-[50px]">
         <Profile />
         <About />
       </div>
