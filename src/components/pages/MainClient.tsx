@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Profile from "../layout/contents/profile/Profile";
 import About from "../layout/contents/about/About";
 import Skill from "../layout/contents/skill/Skill";
+import Loading from "../loading/Loading";
 
 const MainClient = () => {
   const [isMount, setIsMount] = useState<boolean>(false);
@@ -15,15 +16,15 @@ const MainClient = () => {
     setIsMount(true);
   }, []);
 
-  useEffect(()=> {
-    if(skillRef.current) {
+  useEffect(() => {
+    if (skillRef.current) {
       setTopPosition(skillRef.current.offsetTop);
       setWrapHeight(skillRef.current.clientHeight);
     }
-  },[isMount])
+  }, [isMount]);
 
   return !isMount ? (
-    <div className="animate-pulse">Loading...</div>
+    <Loading />
   ) : (
     <div className="grid gap-y-[50px]">
       <Profile />
