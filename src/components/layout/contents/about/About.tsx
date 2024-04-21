@@ -4,8 +4,18 @@ import React from "react";
 import MyProfile from "../../../../../public/images/profile.jpg";
 import Career, { CareerOption } from "./Career";
 import Section from "../Section";
+import useInvitePosition from "@/hook/useInvitePosition";
+import { useAboutPositionStore } from "@/store/store";
 
 const About = () => {
+
+  const topPosition = useAboutPositionStore((state) => state.topPosition);
+  const wrapHeight = useAboutPositionStore((state) => state.wrapHeight);
+  
+
+  const { isEnter, percentage, inviteHeight, invitePosition } =
+    useInvitePosition({ topPosition: topPosition, height: wrapHeight });
+
   const careerList: CareerOption[] = [
     {
       company: "웹디자인(웹퍼블리셔) 프론트앤드 실무자 양성 과정",
@@ -52,7 +62,12 @@ const About = () => {
   ];
 
   return (
-    <Section id="about">
+    <Section
+      id="about"
+      className={`${
+        isEnter ? "opacity-100 translate-y-0" : "opacity-0 translate-x-[-50px]"
+      } transition-all duration-300`}
+    >
       <SectionTItle text="About Me" desc={`I'm a Frontend developer`} />
       <div className="mb-[30px]">
         <p>

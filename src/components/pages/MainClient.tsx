@@ -1,36 +1,62 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Profile from "../layout/contents/profile/Profile";
 import About from "../layout/contents/about/About";
 import Skill from "../layout/contents/skill/Skill";
 import Loading from "../loading/Loading";
+import {
+  useIsMountStore,
+  useAboutPositionStore,
+  useSkillPositionStore,
+} from "@/store/store";
 
 const MainClient = () => {
-  const [isMount, setIsMount] = useState<boolean>(false);
-  const [topPosition, setTopPosition] = useState<number>(0);
-  const [wrapHeight, setWrapHeight] = useState<number>(0);
+  const aboutRef = useRef<HTMLDivElement>(null);
   const skillRef = useRef<HTMLDivElement>(null);
+
+  const { isMount, setIsMount } = useIsMountStore();
+  const {
+    setTopPosition: setAboutTopPosition,
+    setWrapHeight: setAboutWrapHeight,
+  } = useAboutPositionStore();
+  const {
+    setTopPosition: setSkillTopPosition,
+    setWrapHeight: setSkillWrapHeight,
+  } = useSkillPositionStore();
 
   useEffect(() => {
     setIsMount(true);
   }, []);
 
   useEffect(() => {
-    if (skillRef.current) {
-      setTopPosition(skillRef.current.offsetTop);
-      setWrapHeight(skillRef.current.clientHeight);
+    if (aboutRef.current) {
+      setAboutTopPosition(aboutRef.current.offsetTop);
+      setAboutWrapHeight(aboutRef.current.clientHeight);
     }
-  }, [isMount]);
+
+    if (skillRef.current) {
+      setSkillTopPosition(skillRef.current.offsetTop);
+      setSkillWrapHeight(skillRef.current.clientHeight);
+    }
+  }, [
+    isMount,
+    setAboutTopPosition,
+    setAboutWrapHeight,
+    setSkillTopPosition,
+    setSkillWrapHeight,
+  ]);
 
   return !isMount ? (
     <Loading />
   ) : (
     <div className="grid gap-y-[50px]">
       <Profile />
-      <About />
+      <div ref={aboutRef}>
+        <About />
+      </div>
       <div ref={skillRef}>
-        <Skill topPosition={topPosition} wrapHeight={wrapHeight} />
+        <Skill />
       </div>
     </div>
   );

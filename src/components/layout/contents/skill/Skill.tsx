@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Section from "../Section";
 import SectionTItle from "@/components/title/SectionTItle";
 import SkillBar from "./SkillBar";
@@ -9,13 +9,13 @@ import { SiJavascript } from "react-icons/si";
 import { SiReact } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
+import { useSkillPositionStore } from "@/store/store";
 
-interface SkillProps {
-  topPosition: number;
-  wrapHeight: number;
-}
+const Skill = () => {
 
-const Skill = ({ topPosition, wrapHeight }: SkillProps) => {
+  const topPosition = useSkillPositionStore((state) => state.topPosition);
+  const wrapHeight = useSkillPositionStore((state) => state.wrapHeight);
+
   const { isEnter, percentage, inviteHeight, invitePosition } =
     useInvitePosition({ topPosition: topPosition, height: wrapHeight });
 

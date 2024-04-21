@@ -5,10 +5,10 @@ import React, { useState } from "react";
 import NavItem from "./NavItem";
 
 const navList: NavigationOption[] = [
-  { text: "Home", url: "#home" },
-  { text: "About", url: "#about" },
-  { text: "Skill", url: "#skill" },
-  { text: "Project", url: "/project/idl" },
+  { text: "Home", url: "/#home" },
+  { text: "About", url: "/#about" },
+  { text: "Skill", url: "/#skill" },
+  { text: "Project", url: "/project" },
   { text: "Contact", url: "#contact" },
 ];
 
