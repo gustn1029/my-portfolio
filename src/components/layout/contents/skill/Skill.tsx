@@ -9,14 +9,14 @@ import { SiJavascript } from "react-icons/si";
 import { SiReact } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
+import { SiRedux } from "react-icons/si";
 import { useSkillPositionStore } from "@/store/store";
 
 const Skill = () => {
-
   const topPosition = useSkillPositionStore((state) => state.topPosition);
   const wrapHeight = useSkillPositionStore((state) => state.wrapHeight);
 
-  const { isEnter, percentage, inviteHeight, invitePosition } =
+  const { isEnter, percentage } =
     useInvitePosition({ topPosition: topPosition, height: wrapHeight });
 
   //   style
@@ -108,6 +108,19 @@ const Skill = () => {
                 }`}
               >
                 75%
+              </span>
+            </div>
+          </SkillBar>
+          <SkillBar className={`${percentage >= -20 ? "w-[30%]" : "w-0"}`}>
+            <p>ZUSTAND</p>
+            <div className={`${barTextStyle}`}>
+              <SiRedux className="text-purple-500" />
+              <span
+                className={`${barPercentStyle} ${
+                  percentage >= -20 ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                30%
               </span>
             </div>
           </SkillBar>
