@@ -6,7 +6,8 @@ import { ProjectProps } from "@/type";
 import Hwangso from "../../../public/images/project/hwangso.jpg";
 import Gum from "../../../public/images/project/gum.jpg";
 import Gwhealth from "../../../public/images/project/gwhealth.png";
-import QutationEasy from "../../../public/images/project/quotationeasy.png";
+import QutationEasy from "../../../public/images/project/qoutationeasy.png";
+import CmsImage from "../../../public/images/project/cmsImage.png";
 import SectionTItle from "../title/SectionTItle";
 
 const ProjectClient = () => {
@@ -15,7 +16,7 @@ const ProjectClient = () => {
       title: "황소닭갈비",
       desc: "퍼스트몰을 활용하여 디자인에 맞게 쇼핑몰을 제작하였습니다.",
       imageUrl: Hwangso,
-      url: "https://hwangsodakgalbi.com/",
+      url: "https://hwangsodakgalbi.com",
       skill: "HTML,CSS & SCSS,JAVASCRIPT",
       period: "",
     },
@@ -23,7 +24,7 @@ const ProjectClient = () => {
       title: "횡성굼벵이마을",
       desc: "퍼스트몰을 활용하여 디자인에 맞게 쇼핑몰을 제작하였습니다.",
       imageUrl: Gum,
-      url: "https://kgumbeng.kr/",
+      url: "https://kgumbeng.kr",
       skill: "HTML,CSS & SCSS,JAVASCRIPT",
       period: "",
     },
@@ -31,7 +32,7 @@ const ProjectClient = () => {
       title: "강원특별자치도 통합건강증진사업지원단",
       desc: "전자정부프레임워크를 적용하여 웹 사이트를 제작하였습니다.",
       imageUrl: Gwhealth,
-      url: "https://hwangsodakgalbi.com/",
+      url: "https://gwhealth.kr",
       skill: "HTML,CSS,JAVASCRIPT,JSP",
       period: "2023.11.16 ~ 2023.12.13",
     },
@@ -41,7 +42,15 @@ const ProjectClient = () => {
       imageUrl: QutationEasy,
       url: "/project",
       skill: "NEXT.JS,TAILWIND CSS,RESTFUL API,REACT-CHARTJS-2",
-      period: "2023.10.02 ~ 2023.12.29",
+      period: "2023.10.26 ~ 2024.01.09",
+    },
+    {
+      title: "IDL CMS",
+      desc: "자사 CMS 제작 프로젝트에서 프론트엔드, 백엔드 작업을 진행했습니다.",
+      imageUrl: CmsImage,
+      url: "/project",
+      skill: "SPRING BOOT,NEXT.JS,TAILWIND CSS,RESTFUL API,REACT-CHARTJS-2",
+      period: "2024.01.22 ~ 2024.03.20",
     },
   ];
 
