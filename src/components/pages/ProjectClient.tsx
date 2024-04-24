@@ -8,6 +8,7 @@ import Gum from "../../../public/images/project/gum.jpg";
 import Gwhealth from "../../../public/images/project/gwhealth.png";
 import QutationEasy from "../../../public/images/project/qoutationeasy.png";
 import CmsImage from "../../../public/images/project/cmsImage.png";
+import Allloda from "../../../public/images/project/alllida.png";
 import SectionTItle from "../title/SectionTItle";
 
 const ProjectClient = () => {
@@ -42,6 +43,14 @@ const ProjectClient = () => {
       imageUrl: QutationEasy,
       url: "/project",
       skill: "NEXT.JS,TAILWIND CSS,RESTFUL API,REACT-CHARTJS-2",
+      period: "2023.10.26 ~ 2024.01.09",
+    },
+    {
+      title: "모두알리다 홈페이지",
+      desc: "자사 서비스 모두알리다의 웹 사이트 제작 프로젝트에서 다른 개발자 1명과 공동으로 프론트엔드 작업에 참여했습니다.",
+      imageUrl: Allloda,
+      url: "https://alllida.com/",
+      skill: "NEXT.JS,TAILWIND CSS, FRAMER-MOTION",
       period: "2023.10.26 ~ 2024.01.09",
     },
     {
