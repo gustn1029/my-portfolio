@@ -9,14 +9,18 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed flex top-0 left-[50%] translate-x-[-50%] h-[50px] items-center justify-between px-10 
+      className={`fixed flex top-0 left-[50%] translate-x-[-50%] h-[50px] items-center justify-between common-px 
       ${scrollPosition === 0 ? " w-full translate-y-0" : " w-[90%] bg-white bg-opacity-60 translate-y-5 rounded-[30px] shadow-lg"}
       transition-all
       backdrop-blur-sm
       z-[100]
+      phone:flex-col
+      phone:gap-x-0
+      phone:justify-center
+      phone:gap-y-[10px]
       `}
     >
-      <h2 className="dancing-font font-bold text-[20px]">KimHyeonSoo</h2>
+      <h2 className="dancing-font font-bold text-[20px] phone:text-[16px]">KimHyeonSoo</h2>
       <Navigation />
     </header>
   );
