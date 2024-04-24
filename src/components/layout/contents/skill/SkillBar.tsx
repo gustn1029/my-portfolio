@@ -7,7 +7,7 @@ interface IProps {
 
 const SkillBar = ({children, className }: IProps) => {
   return (
-    <div className="w-[70%] m-auto flex items-center gap-x-[70px]">
+    <div className="w-[70%] m-auto flex items-center gap-x-[70px] mobile:flex-col mobile:gap-y-[10px] mobile:gap-x-0 mobile:w-full">
       <div className="grid w-[130px] gap-y-[5px]">{children}</div>
       <div className="flex-1 relative h-6 overflow-hidden bg-gray-200 rounded-3xl shadow-inner">
         <div
