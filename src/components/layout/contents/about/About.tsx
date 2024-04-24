@@ -76,7 +76,7 @@ const About = () => {
         </p>
         <p>프론트엔드 개발자 김현수입니다.</p>
       </div>
-      <article className="flex justify-between gap-x-[70px]">
+      <article className="flex justify-between gap-x-[70px] mobile:flex-col mobile:gap-x-0 mobile:gap-y-[20px]">
         <figure className="self-baseline max-w-[300px] p-[20px] bg-white rounded-lg shadow-md">
           <Image src={MyProfile} alt="my-image" />
         </figure>
