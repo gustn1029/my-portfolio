@@ -35,3 +35,13 @@ body {
   padding: 0 40px;
 }
 
+.animation-project {
+  animation: moving 1s ease-in-out infinite;
+}
+
+@keyframes moving {
+  0%{transform: translate(0,0);}
+  50%{transform: translate(30%, 0);}
+  100%{transform: translate(0,0);}
+}
+

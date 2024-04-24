@@ -5,10 +5,10 @@ import Project from "../project/Project";
 import { ProjectProps } from "@/type";
 import Hwangso from "../../../public/images/project/hwangso.jpg";
 import Gum from "../../../public/images/project/gum.jpg";
+import Quotationeasy from "../../../public/images/project/quotationeasy.png";
 import Gwhealth from "../../../public/images/project/gwhealth.png";
-import QutationEasy from "../../../public/images/project/qoutationeasy.png";
+import Alllida from "../../../public/images/project/alllida.png";
 import CmsImage from "../../../public/images/project/cmsImage.png";
-import Allloda from "../../../public/images/project/alllida.png";
 import SectionTItle from "../title/SectionTItle";
 
 const ProjectClient = () => {
@@ -40,7 +40,7 @@ const ProjectClient = () => {
     {
       title: "견적이지 관리자",
       desc: "자사 서비스 견적이지의 관리자 사이트 제작 프로젝트에서 프론트엔드 작업을 진행했습니다.",
-      imageUrl: QutationEasy,
+      imageUrl: Quotationeasy,
       url: "/project",
       skill: "NEXT.JS,TAILWIND CSS,RESTFUL API,REACT-CHARTJS-2",
       period: "2023.10.26 ~ 2024.01.09",
@@ -48,16 +48,16 @@ const ProjectClient = () => {
     {
       title: "모두알리다 홈페이지",
       desc: "자사 서비스 모두알리다의 웹 사이트 제작 프로젝트에서 다른 개발자 1명과 공동으로 프론트엔드 작업에 참여했습니다.",
-      imageUrl: Allloda,
+      imageUrl: Alllida,
       url: "https://alllida.com/",
       skill: "NEXT.JS,TAILWIND CSS, FRAMER-MOTION",
-      period: "2023.10.26 ~ 2024.01.09",
+      period: "2023.11.22 ~ 2024.01.12",
     },
     {
       title: "IDL CMS",
       desc: "자사 CMS 제작 프로젝트에서 프론트엔드, 백엔드 작업을 진행했습니다.",
       imageUrl: CmsImage,
-      url: "/project",
+      url: "https://www.figma.com/file/qCi9dJ9awHMFMNjYJoMDtM/Untitled?type=design&node-id=0-1&mode=design&t=bMoMAwpI8VyaBW4r-0",
       skill: "SPRING BOOT,NEXT.JS,TAILWIND CSS,RESTFUL API,REACT-CHARTJS-2",
       period: "2024.01.22 ~ 2024.03.20",
     },
