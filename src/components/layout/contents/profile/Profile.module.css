@@ -1,31 +1,4 @@
-/* .imageBackground {
-  width: 100%;
-  height: calc(100vh - 50px);
-  position: relative;
-  overflow: hidden;
-}
-.imageBackground::before,
-.imageBackground::after {
-  content: "";
-  width: 120%;
-  height: 70%;
-  position: absolute;
-  top: 40%;
-  background-color: rgb(28, 34, 39);
-}
-
-.imageBackground::before{
-    left: 0;
-    transform: translateX(-10%) rotate(0deg);
-    border-radius: 0 80% 0 0;
-}
-.imageBackground::after{
-    right: 0;
-    z-index: -1;
-    border-radius: 100%;
-    transform: translateX(17%) rotate(172deg);
-    background-color: rgba(28, 34, 39, 0.7);
-} */
+@charset "utf-8";
 
 .imageBackground {
   position: relative;
@@ -53,4 +26,10 @@
   height: calc(100% - 50px);
   border: 10px solid rgb(168, 85, 247);
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 820px) {
+  .imageBackground::after{
+    border: 5px solid rgb(168, 85, 247);
+  }
 }

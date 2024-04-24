@@ -25,7 +25,7 @@ const ProfileImage = () => {
   };
 
   return (
-    <div className="flex w-full justify-between items-center overflow-hidden">
+    <div className="flex w-full justify-between items-center overflow-hidden mobile:flex-col">
       <Section>
         <div className="font-bold text-[2.5rem]">
           <p className="text-[1.5em]">Hello,</p>
@@ -45,7 +45,7 @@ const ProfileImage = () => {
       >
         <motion.figure
           variants={cardVariants}
-          className={`max-w-[400px] w-full pr-[50px] pb-[50px] ${style.imageBackground}`}
+          className={`max-w-[400px] w-full pr-[50px] pb-[50px] ${style.imageBackground} mobile:max-w-[250px]`}
         >
           <Image
             className="relative z-[1] shadow-lg shadow-gray-500"
