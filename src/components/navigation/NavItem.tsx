@@ -16,7 +16,7 @@ const NavItem = ({selected, text, url, onClick}:ItemProps) => {
       onClick={onClick}
       animate={{opacity: selected ? 1 : 0.5}}
     >
-      <Link className='block' href={url}>
+      <Link className='block phone:text-[0.9rem]' href={url}>
         {text}
         {selected && (
           <motion.div 
