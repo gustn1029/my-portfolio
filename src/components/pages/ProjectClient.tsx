@@ -41,7 +41,7 @@ const ProjectClient = () => {
       title: "견적이지 관리자",
       desc: "자사 서비스 견적이지의 관리자 사이트 제작 프로젝트에서 프론트엔드 작업을 진행했습니다.",
       imageUrl: Quotationeasy,
-      url: "/project",
+      url: "https://www.figma.com/file/aHCBgnQjVRGmp8M4kezAy7/quotationEasy?type=design&node-id=0-1&mode=design&t=8K7XGmUXpWCNObFK-0",
       skill: "NEXT.JS,TAILWIND CSS,RESTFUL API,REACT-CHARTJS-2",
       period: "2023.10.26 ~ 2024.01.09",
     },
