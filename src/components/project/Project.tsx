@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProjectProps } from "@/type";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Document, Page, pdfjs } from "react-pdf";
 
 const Project = ({
   title,
@@ -12,7 +13,14 @@ const Project = ({
   url,
   imageUrl,
   period,
+  isFile,
 }: ProjectProps) => {
+  const fileDown = (path: string) => {
+    if (isFile) {
+      console.log(path);
+      window.open(path);
+    }
+  };
   return (
     <Section className={`flex gap-x-[70px]`}>
       <article className="flex flex-col justify-between w-1/2">
@@ -33,18 +41,38 @@ const Project = ({
             </ul>
           </div>
         </div>
-        <Link href={url} target="_blank" className="flex justify-between">
+        <Link
+          href={isFile ? "#" : url}
+          target={isFile ? "_self" : "_blank"}
+          onClick={() => fileDown(url)}
+          className="flex justify-between"
+          download={isFile ? true : false}
+        >
           <span>View Project</span>
-          <span className="animation-project"><FaArrowRightLong /></span>
+          <span className="animation-project">
+            <FaArrowRightLong />
+          </span>
         </Link>
       </article>
       <article className="max-w-[600px] w-full">
-        <Link href={url} target="_blank">
+        <Link
+          href={isFile ? "#" : url}
+          target={isFile ? "_self" : "_blank"}
+          onClick={() => fileDown(url)}
+          download={isFile ? true : false}
+        >
           <figure className="p-[10px] shadow-lg shadow-gray-300">
             <Image src={imageUrl} alt={title} />
           </figure>
         </Link>
       </article>
+      {isFile && (
+        <div>
+          <Document file={url}>
+            <Page pageNumber={1} />
+          </Document>
+        </div>
+      )}
     </Section>
   );
 };
