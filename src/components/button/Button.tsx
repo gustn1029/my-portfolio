@@ -1,8 +1,16 @@
 import React from 'react'
 
-const Button = () => {
+interface Props {
+  type: "button" | "submit";
+  onClick?: () => void;
+  text: string;
+}
+
+const Button = ({type = "button", onClick, text}:Props) => {
   return (
-    <div>Button</div>
+    <button type={type} onClick={onClick} className='block p-[10px] text-white w-full bg-purple-500 rounded-lg focus:outline-none'>
+      {text}
+    </button>
   )
 }
 
