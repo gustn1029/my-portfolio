@@ -9,7 +9,7 @@ const navList: NavigationOption[] = [
   { text: "About", url: "/#about" },
   { text: "Skill", url: "/#skill" },
   { text: "Project", url: "/project" },
-  { text: "Contact", url: "#contact" },
+  { text: "Contact", url: "/contact" },
 ];
 
 const Navigation = () => {
