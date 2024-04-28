@@ -3,7 +3,7 @@ import React from "react";
 
 const Contents = ({ children }: ChildrenProps) => {
   return (
-    <main className="pt-[50px] common-px" id="home">
+    <main className="!pt-[50px] common-px" id="home">
       {children}
     </main>
   );
