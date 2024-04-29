@@ -10,6 +10,7 @@ interface ItemProps {
 }
 
 const NavItem = ({selected, text, url, onClick}:ItemProps) => {
+  
   return (
     <motion.li
       className={`relative`}
