@@ -17,4 +17,11 @@ export interface ProjectProps {
     url: string;
     imageUrl: StaticImport | string;
     period: string;
+    isFile: boolean;
+  }
+
+  export interface Post {
+    title: string;
+    email: string;
+    content: string;
   }
