@@ -1,6 +1,10 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { ReactNode } from "react";
-import { FieldError, FieldErrors, UseFormRegisterReturn } from "react-hook-form";
+import {
+  FieldError,
+  FieldErrors,
+  UseFormRegisterReturn,
+} from "react-hook-form";
 
 export interface ChildrenProps {
   children: ReactNode;
@@ -38,6 +42,7 @@ export interface InputProps {
 }
 
 export interface Post {
+  id: number;
   title: string;
   email: string;
   content: string;
