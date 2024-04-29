@@ -16,7 +16,6 @@ const Project = ({
 }: ProjectProps) => {
   const fileDown = (path: string) => {
     if (isFile) {
-      console.log(path);
       window.open(path);
     }
   };
