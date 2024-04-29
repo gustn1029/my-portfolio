@@ -7,9 +7,12 @@ import FormInput from "../form/FormInput";
 import Button from "../button/Button";
 import SectionTItle from "../title/SectionTItle";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const ContactClient = () => {
   const router = useRouter();
+  const { data: session } = useSession();
+  const id = session?.user.id;
 
   const {
     register,
@@ -18,17 +21,24 @@ const ContactClient = () => {
   } = useForm<Post>();
 
   const onSubmit = async (data: Post) => {
+    const body: Post = {
+      id: id as number,
+      title: data.title,
+      email: data.email,
+      content: data.content,
+    };
+
     const res = await fetch(`/api/post`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(body),
     });
 
     if (res.ok) {
       alert("제안해 주셔서 감사합니다. \n확인하는 대로 연락 드리겠습니다!");
-      router.push("/")
+      router.push("/");
     } else {
       alert(`데이터 저장에 실패했습니다.\n${res.status}`);
     }
