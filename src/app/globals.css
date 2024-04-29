@@ -11,6 +11,14 @@
   font-style: normal;
 }
 
+.hidden {
+  opacity: 0;
+  width: 0; height: 0;
+  position: absolute; left: -9999px; top: -9999px;
+  line-height: 0; font-size: 0;
+  overflow: hidden;
+}
+
 .nanumgothic * {
  font-family: 'Nanum Gothic', sans-serif;
 }
