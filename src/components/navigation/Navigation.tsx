@@ -14,8 +14,8 @@ const navList: NavigationOption[] = [
 
 const Navigation = () => {
   const [selected, setSelected] = useState<number>(() => {
-    const currentPath = window.location.pathname;
-    const foundIndex = navList.findIndex((el) => el.url.includes(currentPath));
+    const currentPath = typeof window !== "undefined" && window.location.pathname;
+    const foundIndex = navList.findIndex((el) => el.url.includes(currentPath as string));
     return foundIndex !== -1 ? foundIndex : 0;
   });
 
