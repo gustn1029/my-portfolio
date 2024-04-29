@@ -20,6 +20,7 @@ const ProjectClient = () => {
       url: "https://hwangsodakgalbi.com",
       skill: "HTML,CSS & SCSS,JAVASCRIPT",
       period: "",
+      isFile: false
     },
     {
       title: "횡성굼벵이마을",
@@ -28,6 +29,7 @@ const ProjectClient = () => {
       url: "https://kgumbeng.kr",
       skill: "HTML,CSS & SCSS,JAVASCRIPT",
       period: "",
+      isFile: false
     },
     {
       title: "강원특별자치도 통합건강증진사업지원단",
@@ -36,14 +38,17 @@ const ProjectClient = () => {
       url: "https://gwhealth.kr",
       skill: "HTML,CSS,JAVASCRIPT,JSP",
       period: "2023.11.16 ~ 2023.12.13",
+      isFile: false
     },
     {
       title: "견적이지 관리자",
       desc: "자사 서비스 견적이지의 관리자 사이트 제작 프로젝트에서 프론트엔드 작업을 진행했습니다.",
       imageUrl: Quotationeasy,
-      url: "https://www.figma.com/file/aHCBgnQjVRGmp8M4kezAy7/quotationEasy?type=design&node-id=0-1&mode=design&t=8K7XGmUXpWCNObFK-0",
+
+      url: "./pdf/quotationeasy.pdf",
       skill: "NEXT.JS,TAILWIND CSS,RESTFUL API,REACT-CHARTJS-2",
       period: "2023.10.26 ~ 2024.01.09",
+      isFile: true
     },
     {
       title: "모두알리다 홈페이지",
@@ -52,14 +57,16 @@ const ProjectClient = () => {
       url: "https://alllida.com/",
       skill: "NEXT.JS,TAILWIND CSS, FRAMER-MOTION",
       period: "2023.11.22 ~ 2024.01.12",
+      isFile: false
     },
     {
       title: "IDL CMS",
       desc: "자사 CMS 제작 프로젝트에서 프론트엔드, 백엔드 작업을 진행했습니다.",
       imageUrl: CmsImage,
-      url: "https://www.figma.com/file/qCi9dJ9awHMFMNjYJoMDtM/Untitled?type=design&node-id=0-1&mode=design&t=bMoMAwpI8VyaBW4r-0",
+      url: "./pdf/idl_cms.pdf",
       skill: "SPRING BOOT,NEXT.JS,TAILWIND CSS,RESTFUL API,REACT-CHARTJS-2",
       period: "2024.01.22 ~ 2024.03.20",
+      isFile: true
     },
   ];
 
@@ -76,6 +83,7 @@ const ProjectClient = () => {
             url={el.url}
             skill={el.skill}
             period={el.period}
+            isFile={el.isFile}
           />
         ))}
       </div>
