@@ -10,7 +10,7 @@ export const POST = async (req: Request) => {
         title: body.title,
         email: body.email,
         content: body.content,
-        authorId: 1,
+        authorId: body.id,
       },
     });
 
