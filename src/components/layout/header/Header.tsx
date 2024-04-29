@@ -5,6 +5,7 @@ import useScrollPosition from "@/hook/useScrollPosition";
 import React, { useEffect } from "react";
 import { PiSignOutBold } from "react-icons/pi";
 import { signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 
 const Header = () => {
   const scrollPosition = useScrollPosition();
@@ -28,7 +29,7 @@ const Header = () => {
       `}
     >
       <h2 className="dancing-font font-bold text-[20px] phone:text-[16px]">
-        KimHyeonSoo
+        <Link href={"/#home"}>KimHyeonSoo</Link>
       </h2>
       <div className="flex gap-x-[20px] items-end">
         <Navigation />
