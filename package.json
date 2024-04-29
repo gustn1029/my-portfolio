@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/core": "^0.30.0",
     "@hookform/error-message": "^2.0.1",
     "@netlify/plugin-nextjs": "^5.1.2",
     "@prisma/client": "^5.13.0",
