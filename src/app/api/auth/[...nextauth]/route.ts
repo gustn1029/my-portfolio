@@ -1,5 +1,6 @@
 import NextAuth from "next-auth/next";
 import Credentials from "next-auth/providers/credentials";
+import Google from "next-auth/providers/google";
 
 const handler = NextAuth({
   providers: [
@@ -34,7 +35,14 @@ const handler = NextAuth({
         }
       },
     }),
+    Google({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
   ],
+  session: {
+    maxAge: 3600
+  },
   callbacks:   {
     async jwt({ token, user }) {
         return { ...token, ...user }
@@ -49,7 +57,7 @@ const handler = NextAuth({
 
   pages: {
     signIn: "/signin",
-    signOut: "/"
+    signOut: "/#home"
   }
 });
 

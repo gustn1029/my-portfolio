@@ -8,10 +8,8 @@ import useInvitePosition from "@/hook/useInvitePosition";
 import { useAboutPositionStore } from "@/store/store";
 
 const About = () => {
-
   const topPosition = useAboutPositionStore((state) => state.topPosition);
   const wrapHeight = useAboutPositionStore((state) => state.wrapHeight);
-  
 
   const { isEnter, percentage, inviteHeight, invitePosition } =
     useInvitePosition({ topPosition: topPosition, height: wrapHeight });
@@ -36,8 +34,7 @@ const About = () => {
       period: "2021. 03 ~ 2021. 10",
       position: "퍼블리셔",
       desc: [
-        "전자정부프레임워크를 활용하여 공공기관프로젝트에서 ",
-        "퍼블리싱과 api 연동 및 프론트 개발을 담당하였습니다.",
+        "전자정부프레임워크를 활용하여 공공기관프로젝트에 퍼블리셔로 참여",
       ],
       hashTag: "#HTML, #CSS, #JAVASCRIPT, #PHOTOSHOP",
     },
@@ -76,8 +73,8 @@ const About = () => {
         </p>
         <p>프론트엔드 개발자 김현수입니다.</p>
       </div>
-      <article className="flex justify-between gap-x-[70px] mobile:flex-col mobile:gap-x-0 mobile:gap-y-[20px]">
-        <figure className="self-baseline max-w-[300px] p-[20px] bg-white rounded-lg shadow-md">
+      <article className="flex justify-between gap-x-[70px] mobile:flex-col mobile:gap-x-0 mobile:gap-y-[20px] mobile:items-center ">
+        <figure className="self-baseline tablet:m-auto phone:m-auto max-w-[300px] p-[20px] bg-white rounded-lg shadow-md">
           <Image src={MyProfile} alt="my-image" />
         </figure>
         <div className="flex-1">

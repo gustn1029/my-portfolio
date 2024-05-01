@@ -12,6 +12,11 @@ interface UsePositionProps {
   setWrapHeight: (wrapHeight: number) => void;
 }
 
+interface UseMainSelectedProps {
+  mainSelect: boolean;
+  setMainSelected: (selected: boolean) => void;
+}
+
 export const useIsMountStore = create<IsMountProps>()((set) => ({
   isMount: false,
   setIsMount: (isMount) => set({ isMount }),
@@ -29,4 +34,9 @@ export const useSkillPositionStore = create<UsePositionProps>()((set) => ({
     wrapHeight: 0,
     setTopPosition: (topPosition) => set({topPosition}),
     setWrapHeight: (wrapHeight) => set({wrapHeight}),
+}));
+
+export const useMainSelectedStore = create<UseMainSelectedProps>()((set) => ({
+  mainSelect: false,
+  setMainSelected: (mainSelect) => set({mainSelect}),
 }));

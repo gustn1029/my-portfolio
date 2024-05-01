@@ -17,8 +17,13 @@ const Career = ({ careerList, width }: CareerProps) => {
   return (
     <ul className="flex flex-col gap-y-[20px]">
       {careerList.map((el, idx) => (
-        <li key={`${el.company}_${idx}`} className="flex gap-x-5">
-          <p className="w-[171px] max-h-[24px] pr-[20px] text-gray-500 border-r border-r-gray-300">
+        <li
+          key={`${el.company}_${idx}`}
+          className="flex break-keep gap-x-5 tablet:flex-col target:gap-y-[10px] mobile:flex-col mobile:gap-y-[10px]"
+        >
+          <p
+            className="w-[171px] max-h-[24px] pr-[20px] pb-[3px] text-gray-500 border-r border-r-gray-300"
+          >
             {el.period}
           </p>
           <div className="flex-1 flex flex-col gap-y-[10px]">
@@ -31,7 +36,7 @@ const Career = ({ careerList, width }: CareerProps) => {
                 <p key={`${item}_${idx}`}>{item}</p>
               ))}
             </div>
-            <div className="flex gap-x-[10px] flex-wrap">
+            <div className="flex gap-x-[10px] flex-wrap gap-y-[5px]">
               {el.hashTag.split(", ").map((tag, idx) => {
                 return (
                   <div
