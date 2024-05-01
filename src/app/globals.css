@@ -51,6 +51,7 @@ body {
   .common-px{padding: 0 20px;}
   .section-bg {
     padding: 20px;
+    border-radius: 30px;
   }
 }
 

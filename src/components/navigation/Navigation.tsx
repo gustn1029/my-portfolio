@@ -52,7 +52,7 @@ const Navigation = () => {
   },[mainSelect])
 
   return (
-    <ul className="flex gap-x-[20px] items-center">
+    <ul className="flex gap-x-[20px] items-center phone:gap-x-[15px]">
       {navList.map((el, idx) => (
         <NavItem
           key={`${el.text}_${idx}`}

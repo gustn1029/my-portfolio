@@ -30,7 +30,7 @@ const Header = () => {
       ${
         scrollPosition === 0
           ? " w-full translate-y-0"
-          : " w-[90%] bg-white bg-opacity-60 translate-y-5 rounded-[30px] shadow-lg"
+          : " w-[90%] phone:w-[calc(100%-15px)] bg-white bg-opacity-60 translate-y-5 rounded-[30px] phone:rounded-[15px] shadow-lg"
       }
       transition-all
       backdrop-blur-sm

@@ -66,12 +66,12 @@ const About = () => {
       } transition-all duration-300`}
     >
       <SectionTItle text="About Me" desc={`I'm a Frontend developer`} />
-      <div className="mb-[30px]">
-        <p>
+      <div className="mb-[30px] break-keep">
+        <p className="phone:inline">
           웹 퍼블리셔로 시작하여 현재는 프론트엔드 개발자로서 역량을 키워 나가고
           있는
         </p>
-        <p>프론트엔드 개발자 김현수입니다.</p>
+        <p className="phone:inline ml-[3px]">프론트엔드 개발자 김현수입니다.</p>
       </div>
       <article className="flex justify-between gap-x-[70px] mobile:flex-col mobile:gap-x-0 mobile:gap-y-[20px] mobile:items-center ">
         <figure className="self-baseline tablet:m-auto phone:m-auto max-w-[300px] p-[20px] bg-white rounded-lg shadow-md">
