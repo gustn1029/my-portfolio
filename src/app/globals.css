@@ -47,6 +47,13 @@ body {
   animation: moving 1s ease-in-out infinite;
 }
 
+@media screen and (max-width:820px) {
+  .common-px{padding: 0 20px;}
+  .section-bg {
+    padding: 20px;
+  }
+}
+
 @keyframes moving {
   0%{transform: translate(0,0);}
   50%{transform: translate(30%, 0);}
