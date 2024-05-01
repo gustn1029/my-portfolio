@@ -2,16 +2,29 @@
 
 import Navigation from "@/components/navigation/Navigation";
 import useScrollPosition from "@/hook/useScrollPosition";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { PiSignOutBold } from "react-icons/pi";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useMainSelectedStore } from "@/store/store";
+import { usePathname } from "next/navigation";
+import Loading from "@/components/loading/Loading";
 
 const Header = () => {
   const scrollPosition = useScrollPosition();
   const { data: session } = useSession();
+  const { setMainSelected } = useMainSelectedStore();
+  const [isMount, setIsMount] = useState<boolean>(false);
 
-  return (
+  useEffect(() => {
+    setIsMount(true);
+  }, []);
+
+  const path = usePathname();
+
+  return !isMount ? (
+    null
+  ) : (
     <header
       className={`fixed flex top-0 left-[50%] translate-x-[-50%] h-[50px] items-center justify-between common-px 
       ${
@@ -23,17 +36,28 @@ const Header = () => {
       backdrop-blur-sm
       z-[100]
       phone:flex-col
+      phone:h-[60px]
       phone:gap-x-0
       phone:justify-center
-      phone:gap-y-[10px]
+      phone:gap-y-[5px]
       `}
     >
-      <h2 className="dancing-font font-bold text-[20px] phone:text-[16px]">
-        <Link href={"/#home"}>KimHyeonSoo</Link>
+      <h2 className="dancing-font font-bold text-[20px] phone:text-[14px]">
+        <Link onClick={() => setMainSelected(true)} href={"/#home"}>
+          KimHyeonSoo
+        </Link>
       </h2>
       <div className="flex gap-x-[20px] items-end">
         <Navigation />
-        {session?.user && <PiSignOutBold className="mb-[3px] text-gray-500 hover:text-black cursor-pointer transition-all" onClick={() => signOut()} />}
+        {session?.user && (
+          <PiSignOutBold
+            className="mb-[3px] text-gray-500 hover:text-black cursor-pointer transition-all"
+            onClick={() => {
+              setMainSelected(path.includes("/contact") ? false : true);
+              signOut();
+            }}
+          />
+        )}
       </div>
     </header>
   );
