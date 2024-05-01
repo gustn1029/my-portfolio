@@ -1,11 +1,12 @@
 "use client";
 
-import Button from "@/components/button/Button";
+import Button, { ButtonStye } from "@/components/button/Button";
 import FormInput from "@/components/form/FormInput";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { signIn, useSession } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 
 interface LoginEntity {
   userName: string;
@@ -28,7 +29,7 @@ const Login = () => {
       userName: data.userName,
       password: data.password,
       redirect: true,
-      callbackUrl:"/contact"
+      callbackUrl: "/contact",
     });
 
     return res;
@@ -43,11 +44,22 @@ const Login = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="section-bg flex flex-col gap-y-[30px]"
         >
-          <article>
+          <article className="flex flex-col gap-y-[10px]">
             <h3 className="text text-[2rem] text-center font-bold">Login</h3>
+            <div className="flex gap-x-[30px]">
+              <p>
+                <span className="text-gray-500">email:</span> user@gmail.com
+              </p>
+              <p>
+                <span className="text-gray-500">password:</span> user123
+              </p>
+            </div>
+            <p className="text-gray-400 text-[0.7rem]">
+              회원가입 폼은 추 후 업데이트 예정입니다.
+            </p>
           </article>
           <article className={`${articleStyle}`}>
-            <div className="flex">
+            <div className="flex items-center">
               <p className="w-[100px]">email</p>
               <span>:</span>
             </div>
@@ -62,7 +74,7 @@ const Login = () => {
             />
           </article>
           <article className={`${articleStyle}`}>
-            <div className="flex">
+            <div className="flex items-center">
               <p className="w-[100px]">password</p>
               <span>:</span>
             </div>
@@ -76,8 +88,20 @@ const Login = () => {
               errorView={errors.userName}
             />
           </article>
-          <article>
-            <Button type="submit" text="signin" />
+          <article className="flex flex-col gap-y-[15px]">
+            <Button type="submit">signin</Button>
+            <Button
+              type="button"
+              style={ButtonStye.NOMAL}
+              onClick={() =>
+                signIn("google", { redirect: true, callbackUrl: "/contact" })
+              }
+            >
+              <p className="flex gap-x-[10px] items-center justify-center">
+                <FcGoogle />
+                <span className="mt-[-3px]">Google Login</span>
+              </p>
+            </Button>
           </article>
         </form>
       </section>
