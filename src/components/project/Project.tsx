@@ -14,9 +14,24 @@ const Project = ({
   period,
   isFile,
 }: ProjectProps) => {
-  const fileDown = (path: string) => {
+  const fileDown = async (path: string) => {
     if (isFile) {
-      window.open(path);
+      try {
+        const res = await fetch(path);
+        const blob = await res.blob();
+
+        const url = window.URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+
+        a.href = url;
+        a.download = path.split("/").pop() as string;
+        a.click();
+
+        window.URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error(`파일 다운로드 중 오류 발생: ${error}`);
+      }
     }
   };
   return (
