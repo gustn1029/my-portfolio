@@ -3,6 +3,7 @@
 import { NavigationOption } from "@/type";
 import React, { useEffect, useState } from "react";
 import NavItem from "./NavItem";
+import { useMainSelectedStore } from "@/store/store";
 
 const navList: NavigationOption[] = [
   { text: "Home", url: "/#home" },
@@ -14,10 +15,16 @@ const navList: NavigationOption[] = [
 
 const Navigation = () => {
   const [selected, setSelected] = useState<number>(() => {
-    const currentPath = typeof window !== "undefined" && window.location.pathname;
-    const foundIndex = navList.findIndex((el) => el.url.includes(currentPath as string));
+    const currentPath =
+      typeof window !== "undefined" && window.location.pathname;
+    const foundIndex = navList.findIndex((el) =>
+      el.url.includes(currentPath as string)
+    );
     return foundIndex !== -1 ? foundIndex : 0;
   });
+
+  const {setMainSelected} = useMainSelectedStore();
+  const mainSelect = useMainSelectedStore((state)=> state.mainSelect);
 
   useEffect(() => {
     const pathChange = () => {
@@ -25,7 +32,8 @@ const Navigation = () => {
       const foundIndex = navList.findIndex((el) =>
         el.url.includes(currentPath)
       );
-      setSelected(foundIndex !== -1 ? foundIndex : 0);
+      const contactPath = currentPath.includes("/contact") || currentPath.includes("signin");
+      setSelected(contactPath ? 4 : (foundIndex !== -1 ? foundIndex : 0));
     };
 
     pathChange();
@@ -37,15 +45,24 @@ const Navigation = () => {
     };
   }, []);
 
+  useEffect(()=> {
+    if(mainSelect === true) {
+      setSelected(0)
+    }
+  },[mainSelect])
+
   return (
-    <ul className="flex gap-x-[20px] items-center">
+    <ul className="flex gap-x-[20px] items-center phone:gap-x-[15px]">
       {navList.map((el, idx) => (
         <NavItem
           key={`${el.text}_${idx}`}
           text={el.text}
           url={el.url}
           selected={selected === idx}
-          onClick={() => setSelected(idx)}
+          onClick={() => {
+            setSelected(idx)
+            setMainSelected(false)
+          }}
         />
       ))}
     </ul>

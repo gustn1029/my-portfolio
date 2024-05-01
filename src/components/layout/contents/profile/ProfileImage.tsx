@@ -25,11 +25,11 @@ const ProfileImage = () => {
   };
 
   return (
-    <div className="flex w-full justify-between items-center overflow-hidden mobile:flex-col">
-      <Section>
-        <div className="font-bold text-[2.5rem]">
+    <div className="relative mobile:h-screen mobile:pb-[40px] flex w-full gap-x-5 justify-between items-center overflow-hidden mobile:flex-col mobile:items-end">
+      <Section className="mobile:bg-transparent mobile:shadow-none">
+        <div className="font-bold text-[2.5rem] tablet:text-[2rem] phone:text-[2rem] mobile:absolute left-0 top-[50px] z-10">
           <p className="text-[1.5em]">Hello,</p>
-          <p>
+          <p className="phone:flex phone:flex-col">
             My name is{" "}
             <span className="text-purple-500 drop-shadow-sm animate-pulse">
               Kim Hyeon Soo
@@ -39,13 +39,14 @@ const ProfileImage = () => {
         </div>
       </Section>
       <motion.div
+        className="mobile:opacity-50"
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
       >
         <motion.figure
           variants={cardVariants}
-          className={`max-w-[400px] w-full pr-[50px] pb-[50px] ${style.imageBackground} mobile:max-w-[250px]`}
+          className={`max-w-[400px] tablet:max-w-[300px] phone:max-w-[280px] w-full pr-[50px] pb-[50px] phone:pr-[40px] phone:pb-[30px] ${style.imageBackground}`}
         >
           <Image
             className="relative z-[1] shadow-lg shadow-gray-500"

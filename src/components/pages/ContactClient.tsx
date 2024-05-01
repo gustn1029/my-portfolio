@@ -8,11 +8,15 @@ import Button from "../button/Button";
 import SectionTItle from "../title/SectionTItle";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { useMainSelectedStore } from "@/store/store";
+import FormTextarea from "../form/FormTextarea";
 
 const ContactClient = () => {
   const router = useRouter();
   const { data: session } = useSession();
   const id = session?.user.id;
+
+  const { setMainSelected } = useMainSelectedStore();
 
   const {
     register,
@@ -38,7 +42,8 @@ const ContactClient = () => {
 
     if (res.ok) {
       alert("제안해 주셔서 감사합니다. \n확인하는 대로 연락 드리겠습니다!");
-      router.push("/");
+      setMainSelected(true);
+      router.push("/#home");
     } else {
       alert(`데이터 저장에 실패했습니다.\n${res.status}`);
     }
@@ -94,8 +99,7 @@ const ContactClient = () => {
             />
           </article>
           <article>
-            <FormInput
-              type="text"
+            <FormTextarea
               label="내용"
               placeholder="내용을 입력해주세요."
               register={register("content", {
@@ -113,7 +117,7 @@ const ContactClient = () => {
             />
           </article>
           <article>
-            <Button type="submit" text="제안하기" />
+            <Button type="submit">제안하기</Button>
           </article>
         </form>
       </section>
