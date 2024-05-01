@@ -15,11 +15,11 @@ const config: Config = {
       },
     },
     screens: {
-      'tablet': '600px',
+      'tablet': {"max":"1023px", "min":"600px"},
       'laptop': '1024px',
       'desktop': '1280px',
       'mobile' : {'max': '820px'},
-      'phone' : {"max": "471px"}
+      'phone' : {"max": "599px"}
     }
   },
   plugins: [],
