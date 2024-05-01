@@ -20,9 +20,9 @@ const Skill = () => {
     useInvitePosition({ topPosition: topPosition, height: wrapHeight });
 
   //   style
-  const barTextStyle = `flex gap-x-[10px] items-center text-gray-400 0.9rem`;
-  const barPercentStyle = `leading-[1] mt-[-3px] transition-all duration-200`;
-
+  const barTextStyle = `flex gap-x-[10px] phone:gap-x-[5px] items-center text-gray-400 text-[0.9rem]`;
+  const barPercentStyle = `leading-[1] mt-[-3px] phone:mt-0 transition-all duration-200`;
+  const barStyle = "opacity-100 mobile:text-[0.85rem]"
   return (
     <Section
       id="skill"
@@ -36,10 +36,10 @@ const Skill = () => {
           <SkillBar className={`${percentage >= -20 ? "w-[85%]" : "w-0"}`}>
             <p>HTML</p>
             <div className={`${barTextStyle}`}>
-              <SiHtml5 className="text-orange-500" />
+              <SiHtml5 className="text-orange-500 w-[15px]" />
               <span
                 className={`${barPercentStyle} ${
-                  percentage >= -20 ? "opacity-100" : "opacity-0"
+                  percentage >= -20 ? barStyle : "opacity-0"
                 }`}
               >
                 85%
@@ -49,10 +49,10 @@ const Skill = () => {
           <SkillBar className={`${percentage >= -20 ? "w-[85%]" : "w-0"}`}>
             <p>CSS</p>
             <div className={`${barTextStyle}`}>
-              <SiCss3 className="text-blue-500" />
+              <SiCss3 className="text-blue-500 w-[15px] h-[15px]" />
               <span
                 className={`${barPercentStyle} ${
-                  percentage >= -20 ? "opacity-100" : "opacity-0"
+                  percentage >= -20 ? barStyle : "opacity-0"
                 }`}
               >
                 85%
@@ -62,10 +62,10 @@ const Skill = () => {
           <SkillBar className={`${percentage >= -20 ? "w-[75%]" : "w-0"}`}>
             <p>JAVASCRIPT</p>
             <div className={`${barTextStyle}`}>
-              <SiJavascript className="text-yellow-400" />
+              <SiJavascript className="text-yellow-400 w-[15px] h-[15px]" />
               <span
                 className={`${barPercentStyle} ${
-                  percentage >= -20 ? "opacity-100" : "opacity-0"
+                  percentage >= -20 ? barStyle : "opacity-0"
                 }`}
               >
                 75%
@@ -75,10 +75,10 @@ const Skill = () => {
           <SkillBar className={`${percentage >= -20 ? "w-[70%]" : "w-0"}`}>
             <p>REACT</p>
             <div className={`${barTextStyle}`}>
-              <SiReact className="text-sky-500" />
+              <SiReact className="text-sky-500 w-[15px] h-[15px]" />
               <span
                 className={`${barPercentStyle} ${
-                  percentage >= -20 ? "opacity-100" : "opacity-0"
+                  percentage >= -20 ? barStyle : "opacity-0"
                 }`}
               >
                 70%
@@ -88,10 +88,10 @@ const Skill = () => {
           <SkillBar className={`${percentage >= -20 ? "w-[70%]" : "w-0"}`}>
             <p>NEXT.JS</p>
             <div className={`${barTextStyle}`}>
-              <SiNextdotjs className="text-black" />
+              <SiNextdotjs className="text-black w-[16px] h-[15px]" />
               <span
                 className={`${barPercentStyle} ${
-                  percentage >= -20 ? "opacity-100" : "opacity-0"
+                  percentage >= -20 ? barStyle : "opacity-0"
                 }`}
               >
                 70%
@@ -101,10 +101,10 @@ const Skill = () => {
           <SkillBar className={`${percentage >= -20 ? "w-[75%]" : "w-0"}`}>
             <p>TAILWIND CSS</p>
             <div className={`${barTextStyle}`}>
-              <SiTailwindcss className="text-blue-500" />
+              <SiTailwindcss className="text-blue-500 w-[15px] h-[15px]" />
               <span
                 className={`${barPercentStyle} ${
-                  percentage >= -20 ? "opacity-100" : "opacity-0"
+                  percentage >= -20 ? barStyle : "opacity-0"
                 }`}
               >
                 75%
@@ -114,10 +114,10 @@ const Skill = () => {
           <SkillBar className={`${percentage >= -20 ? "w-[30%]" : "w-0"}`}>
             <p>ZUSTAND</p>
             <div className={`${barTextStyle}`}>
-              <SiRedux className="text-purple-500" />
+              <SiRedux className="text-purple-500 w-[15px] h-[15px]" />
               <span
                 className={`${barPercentStyle} ${
-                  percentage >= -20 ? "opacity-100" : "opacity-0"
+                  percentage >= -20 ? barStyle : "opacity-0"
                 }`}
               >
                 30%
