@@ -44,6 +44,9 @@ const handler = NextAuth({
   session: {
     maxAge: 3600,
   },
+  jwt: {
+    maxAge: 60 * 60
+  },
   callbacks: {
     async jwt({ token, user }) {
       if(user.email !== undefined || user.email !== null || user.email !== "") {
