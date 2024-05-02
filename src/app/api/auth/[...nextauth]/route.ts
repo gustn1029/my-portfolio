@@ -3,6 +3,7 @@ import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 
 const handler = NextAuth({
+  secret:process.env.NEXTAUTH_SECRET,
   providers: [
     Credentials({
       credentials: {
