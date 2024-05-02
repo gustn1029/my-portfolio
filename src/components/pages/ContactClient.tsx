@@ -54,9 +54,9 @@ const ContactClient = () => {
         <SectionTItle text="Contact" desc="편하게 제안해주세요." />
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col gap-y-[50px]"
+          className="flex flex-col gap-y-[50px] tablet:gap-y-[30px] phone:gap-y-[15px]"
         >
-          <article>
+          <article className="phone:text-[0.9rem]">
             <FormInput
               type="text"
               label="제목"

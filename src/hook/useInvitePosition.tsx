@@ -20,7 +20,7 @@ const useInvitePosition = ({ topPosition, height }: IProps) => {
 
     if (
       scrollPosition > invitePosition / 1.3 &&
-      scrollPosition <= invitePosition + inviteHeight
+      scrollPosition <= invitePosition + (inviteHeight + 400)
     ) {
       setIsEnter(true);
       setPercentage(
