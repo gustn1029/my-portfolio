@@ -3,6 +3,7 @@ import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 
 const handler = NextAuth({
+  secret: process.env.NEXT_PUBLIC_SECRET,
   providers: [
     Credentials({
       credentials: {
@@ -40,27 +41,16 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
   ],
-  secret: process.env.NEXT_PUBLIC_SECRET,
   session: {
     maxAge: 3600,
   },
-  jwt: {
-    maxAge: 60 * 60
-  },
   callbacks: {
     async jwt({ token, user }) {
-      if(user.email !== undefined || user.email !== null || user.email !== "") {
-
-        return { ...token, ...user };
-      } else {
-        return {};
-      }
+      return { ...token, ...user };
     },
 
     async session({ session, token }) {
-      if (token.email !== undefined || token.email !== null || token.email !== "") {
-        session.user = token as any;
-      }
+      session.user = token as any;
 
       return session;
     },
