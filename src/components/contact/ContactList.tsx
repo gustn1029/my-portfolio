@@ -12,16 +12,22 @@ const ContactList = () => {
   const router = useRouter();
   const [dataList, setDataList] = useState<Post[]>([]);
 
-  if (status !== "authenticated") {
-    router.push("/signin");
-    return <></>;
-  }
+  useEffect(() => {
+    if (status !== "authenticated") {
+      router.push("/signin");
+    }
+  }, [status, router]);
 
   const fetcher = (url: string) => fetch(url).then((r) => r.json());
-  const { data, error, isLoading } = useSWR(`/api/post/1`, fetcher);
+  const { data, error } = useSWR(
+    status === "authenticated" ? `/api/post/1` : null,
+    fetcher
+  ); // 수정: 조건부로 useSWR 호출
 
   useEffect(() => {
-    setDataList([...data]);
+    if (data) {
+      setDataList([...data]);
+    }
   }, [data]);
 
   return (

@@ -19,7 +19,8 @@ const config: Config = {
       'laptop': '1024px',
       'desktop': '1280px',
       'mobile' : {'max': '820px'},
-      'phone' : {"max": "599px"}
+      'phone' : {"max": "599px"},
+      "phone-sm":{"max":"325px"}
     }
   },
   plugins: [],

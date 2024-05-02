@@ -5,7 +5,7 @@ const InputFiled = ({ label, children, labelClassName, isLabelTextHidden }: Inpu
   return (
     <div>
       <label htmlFor={label} className={`${labelClassName}`}>
-        <span className={isLabelTextHidden ? "hidden" : "block mb-[5px] text-[0.95rem] text-gray-600"}>{label}</span>
+        <span className={isLabelTextHidden ? "hidden" : "block mb-[5px] text-[0.95rem] phone:text-[0.9rem] text-gray-600"}>{label}</span>
         <div>{children}</div>
       </label>
     </div>

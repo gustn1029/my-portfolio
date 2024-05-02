@@ -36,13 +36,13 @@ const Login = () => {
   };
 
   //   style
-  const articleStyle = `flex gap-x-[20px]`;
+  const articleStyle = `flex gap-x-[20px] phone:gap-x-[0] phone:flex-col phone:gap-y-[10px] phone:text-[0.95rem]`;
   return (
     <div className="h-screen grid place-items-center">
       <section>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="section-bg flex flex-col gap-y-[30px]"
+          className="section-bg flex flex-col gap-y-[30px] phone:gap-y-[15px]"
         >
           <article className="flex flex-col gap-y-[10px]">
             <h3 className="text text-[2rem] text-center font-bold">Login</h3>
@@ -60,7 +60,7 @@ const Login = () => {
           </article>
           <article className={`${articleStyle}`}>
             <div className="flex items-center">
-              <p className="w-[100px]">email</p>
+              <p className="w-[100px]  phone:w-auto">email</p>
               <span>:</span>
             </div>
             <FormInput
@@ -75,7 +75,7 @@ const Login = () => {
           </article>
           <article className={`${articleStyle}`}>
             <div className="flex items-center">
-              <p className="w-[100px]">password</p>
+              <p className="w-[100px] phone:w-auto">password</p>
               <span>:</span>
             </div>
             <FormInput
