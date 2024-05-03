@@ -10,7 +10,7 @@ const navList: NavigationOption[] = [
   { text: "About", url: "/#about" },
   { text: "Skill", url: "/#skill" },
   { text: "Project", url: "/project" },
-  { text: "Contact", url: "/contact" },
+  { text: "Contact", url: "/#contact" },
 ];
 
 const Navigation = () => {
@@ -32,8 +32,7 @@ const Navigation = () => {
       const foundIndex = navList.findIndex((el) =>
         el.url.includes(currentPath)
       );
-      const contactPath = currentPath.includes("/contact") || currentPath.includes("signin");
-      setSelected(contactPath ? 4 : (foundIndex !== -1 ? foundIndex : 0));
+      setSelected(foundIndex !== -1 ? foundIndex : 0);
     };
 
     pathChange();
