@@ -5,12 +5,17 @@ import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Post } from "@/type";
-import Contact from "./Contact";
+import Contact, { ContactOption } from "./Contact";
+import Loading from "../loading/Loading";
 
-const ContactList = () => {
+interface Props {
+  contactId: string;
+}
+
+const ContactList = ({contactId}:Props) => {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const [dataList, setDataList] = useState<Post[]>([]);
+  const id = contactId;
 
   useEffect(() => {
     if (status !== "authenticated") {
@@ -19,21 +24,21 @@ const ContactList = () => {
   }, [status, router]);
 
   const fetcher = (url: string) => fetch(url).then((r) => r.json());
-  const { data, error } = useSWR(
-    status === "authenticated" ? `/api/post/1` : null,
+  const {
+    data: ContactList,
+    error,
+    isLoading,
+  } = useSWR<ContactOption[]>(
+    status === "authenticated" ? `/api/contact/${id}` : null,
     fetcher
   ); // 수정: 조건부로 useSWR 호출
 
-  useEffect(() => {
-    if (data) {
-      setDataList([...data]);
-    }
-  }, [data]);
-
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <div>
       <ul className="grid gap-y-[50px]">
-        {dataList.map((el, idx) => (
+        {ContactList?.map((el, idx) => (
           <Contact
             key={`${el.title}_${idx}`}
             title={el.title}

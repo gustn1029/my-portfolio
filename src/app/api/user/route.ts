@@ -1,5 +1,5 @@
-import prisma from "@/app/lib/prisma";
-import * as bcrypt from 'bcrypt';
+import { Client } from "@/app/lib/mongodb";
+import * as bcrypt from "bcrypt";
 
 interface RequestBody {
   name: string;
@@ -10,15 +10,26 @@ interface RequestBody {
 export async function POST(req: Request) {
   const body: RequestBody = await req.json();
 
-  const user = await prisma.user.create({
-    data: {
+  try {
+    const client = await Client;
+    client.connect();
+
+    const db = client.db();
+
+    const usersCollection = db.collection("user");
+    const hashedPassword = await bcrypt.hash(body.password, 10);
+    
+    await usersCollection.insertOne({
       name: body.name,
       email: body.email,
-      password: await bcrypt.hash(body.password, 10),
-    },
-  });
+      password: hashedPassword,
+    });
 
-  const {password, ...result} = user;
+    client.close()
 
-  return new Response(JSON.stringify(result));
+    return new Response("Success inserting user", {status: 201});
+  } catch (error) {
+    console.error("Error inserting user:", error);
+    return new Response("Error inserting user", { status: 500 });
+  }
 }

@@ -32,7 +32,7 @@ const ContactClient = () => {
       content: data.content,
     };
 
-    const res = await fetch(`/api/post`, {
+    const res = await fetch(`/api/contact`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
