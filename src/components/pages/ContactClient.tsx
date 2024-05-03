@@ -8,13 +8,19 @@ import Button from "../button/Button";
 import SectionTItle from "../title/SectionTItle";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { useMainSelectedStore } from "@/store/store";
+import { useContactPositionStore, useMainSelectedStore } from "@/store/store";
 import FormTextarea from "../form/FormTextarea";
+import useInvitePosition from "@/hook/useInvitePosition";
 
 const ContactClient = () => {
+  const topPosition = useContactPositionStore((state) => state.topPosition);
+  const wrapHeight = useContactPositionStore((state) => state.wrapHeight);
   const router = useRouter();
   const { data: session } = useSession();
   const id = session?.user.id;
+
+  const { isEnter, percentage, inviteHeight, invitePosition } =
+    useInvitePosition({ topPosition: topPosition, height: wrapHeight });
 
   const { setMainSelected } = useMainSelectedStore();
 
@@ -49,7 +55,7 @@ const ContactClient = () => {
     }
   };
   return (
-    <div className="min-h-screen grid place-items-center">
+    <div id="contact" className={`min-h-screen grid place-items-center ${isEnter ? "opacity-100 translate-y-[0]": "opacity-0  translate-y-[-50px]"} transition-all duration-300`}>
       <section className="section-bg w-full">
         <SectionTItle text="Contact" desc="편하게 제안해주세요." />
         <form
