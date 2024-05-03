@@ -9,21 +9,30 @@ import {
   useIsMountStore,
   useAboutPositionStore,
   useSkillPositionStore,
+  useContactPositionStore
 } from "@/store/store";
+import ContactClient from "./ContactClient";
 
 const MainClient = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
   const skillRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const { isMount, setIsMount } = useIsMountStore();
   const {
     setTopPosition: setAboutTopPosition,
     setWrapHeight: setAboutWrapHeight,
   } = useAboutPositionStore();
+
   const {
     setTopPosition: setSkillTopPosition,
     setWrapHeight: setSkillWrapHeight,
   } = useSkillPositionStore();
+
+  const {
+    setTopPosition: setContactTopPosition,
+    setWrapHeight: setContactWrapHeight,
+  } = useContactPositionStore();
 
   useEffect(() => {
     setIsMount(true);
@@ -38,6 +47,11 @@ const MainClient = () => {
     if (skillRef.current) {
       setSkillTopPosition(skillRef.current.offsetTop);
       setSkillWrapHeight(skillRef.current.clientHeight);
+    }
+
+    if (contactRef.current) {
+      setContactTopPosition(contactRef.current.offsetTop);
+      setContactWrapHeight(contactRef.current.clientHeight);
     }
   }, [
     isMount,
@@ -57,6 +71,9 @@ const MainClient = () => {
       </div>
       <div ref={skillRef}>
         <Skill />
+      </div>
+      <div ref={contactRef}>
+        <ContactClient />
       </div>
     </div>
   );
