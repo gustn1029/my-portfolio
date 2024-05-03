@@ -36,6 +36,13 @@ export const useSkillPositionStore = create<UsePositionProps>()((set) => ({
     setWrapHeight: (wrapHeight) => set({wrapHeight}),
 }));
 
+export const useContactPositionStore = create<UsePositionProps>()((set) => ({
+  topPosition: 0,
+  wrapHeight: 0,
+  setTopPosition: (topPosition) => set({topPosition}),
+  setWrapHeight: (wrapHeight) => set({wrapHeight}),
+}));
+
 export const useMainSelectedStore = create<UseMainSelectedProps>()((set) => ({
   mainSelect: false,
   setMainSelected: (mainSelect) => set({mainSelect}),
