@@ -28,6 +28,7 @@ const ContactClient = () => {
     register,
     formState: { errors },
     handleSubmit,
+    setValue
   } = useForm<Post>();
 
   const onSubmit = async (data: Post) => {
@@ -49,6 +50,10 @@ const ContactClient = () => {
     if (res.ok) {
       alert("제안해 주셔서 감사합니다. \n확인하는 대로 연락 드리겠습니다!");
       setMainSelected(true);
+      setValue("title", "");
+      setValue("email","");
+      setValue("content","");
+      router.refresh();
       router.push("/#home");
     } else {
       alert(`데이터 저장에 실패했습니다.\n${res.status}`);
