@@ -1,5 +1,9 @@
-export { default } from 'next-auth/middleware';
+import { withAuth } from "next-auth/middleware";
+
+export default withAuth({
+  secret: process.env.NEXT_PUBLIC_SECRET,
+});
 
 export const config = {
-    matcher: ['/contact/:path*'],
-}
+  matcher: ["/contact/:path*"],
+};
