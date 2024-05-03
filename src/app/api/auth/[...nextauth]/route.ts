@@ -16,7 +16,7 @@ const handler = NextAuth({
       },
 
       async authorize(credentials, req) {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/login`, {
+        const res = await fetch(`/.netlify/functions/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
