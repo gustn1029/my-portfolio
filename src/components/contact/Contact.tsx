@@ -1,12 +1,12 @@
 import React from 'react'
 
-interface Props {
+export interface ContactOption {
   title: string;
   email: string;
   content: string;
 }
 
-const Contact = ({title, email, content}:Props) => {
+const Contact = ({title, email, content}:ContactOption) => {
   return (
     <li className='section-bg'>
         <div>
