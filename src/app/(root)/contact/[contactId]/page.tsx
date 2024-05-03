@@ -1,11 +1,11 @@
 import ContactList from '@/components/contact/ContactList'
 import React from 'react'
 
-interface Props {
-  param: {contactId: string}
+interface ContactProps {
+  params: {contactId: string}
 }
 
-const page = ({param: {contactId}}:Props) => {
+const page = ({params: {contactId}}:ContactProps) => {
   const id = contactId;
   return (
     <ContactList contactId={id} />
