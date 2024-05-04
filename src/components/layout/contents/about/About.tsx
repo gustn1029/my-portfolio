@@ -5,7 +5,9 @@ import MyProfile from "../../../../../public/images/profile.jpg";
 import Career, { CareerOption } from "./Career";
 import Section from "../Section";
 import useInvitePosition from "@/hook/useInvitePosition";
+import { MdOutlineDoubleArrow } from "react-icons/md";
 import { useAboutPositionStore } from "@/store/store";
+import Link from "next/link";
 
 const About = () => {
   const topPosition = useAboutPositionStore((state) => state.topPosition);
@@ -73,7 +75,7 @@ const About = () => {
         </p>
         <p className="phone:inline ml-[3px]">프론트엔드 개발자 김현수입니다.</p>
       </div>
-      <article className="flex justify-between gap-x-[70px] mobile:flex-col mobile:gap-x-0 mobile:gap-y-[20px] mobile:items-center ">
+      <article className="flex justify-between gap-x-[70px] mb-[40px] mobile:flex-col mobile:gap-x-0 mobile:gap-y-[20px] mobile:items-center ">
         <figure className="self-baseline tablet:m-auto phone:m-auto max-w-[300px] p-[20px] bg-white rounded-lg shadow-md">
           <Image src={MyProfile} alt="my-image" />
         </figure>
@@ -83,6 +85,21 @@ const About = () => {
           </div>
         </div>
       </article>
+      <div className="animate-pulse hover:animate-none">
+        <Link
+          href={`/project`}
+          className="flex items-center font-bold text-[1.2rem] text-slate-500 border border-slate-500 rounded-3xl py-[10px] justify-center
+            phone:bg-slate-500 phone:text-white phone:text-[1rem]
+              hover:bg-slate-500 hover:text-white
+              transition-all duration-200
+            "
+        >
+          프로젝트 보러 가기
+          <span className="ml-[5px] mt-[1px]">
+            <MdOutlineDoubleArrow className="text-[1.3em]" />
+          </span>
+        </Link>
+      </div>
     </Section>
   );
 };
