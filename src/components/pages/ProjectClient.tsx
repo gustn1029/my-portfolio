@@ -3,8 +3,6 @@
 import React from "react";
 import Project from "../project/Project";
 import { ProjectProps } from "@/type";
-import Hwangso from "../../../public/images/project/hwangso.jpg";
-import Gum from "../../../public/images/project/gum.jpg";
 import Quotationeasy from "../../../public/images/project/quotationeasy.png";
 import Gwhealth from "../../../public/images/project/gwhealth.png";
 import Alllida from "../../../public/images/project/alllida.png";
@@ -13,24 +11,6 @@ import SectionTItle from "../title/SectionTItle";
 
 const ProjectClient = () => {
   const projectList: ProjectProps[] = [
-    {
-      title: "황소닭갈비",
-      desc: "퍼스트몰을 활용하여 디자인에 맞게 쇼핑몰을 제작하였습니다.",
-      imageUrl: Hwangso,
-      url: "https://hwangsodakgalbi.com",
-      skill: "HTML,CSS & SCSS,JAVASCRIPT",
-      period: "",
-      isFile: false
-    },
-    {
-      title: "횡성굼벵이마을",
-      desc: "퍼스트몰을 활용하여 디자인에 맞게 쇼핑몰을 제작하였습니다.",
-      imageUrl: Gum,
-      url: "https://kgumbeng.kr",
-      skill: "HTML,CSS & SCSS,JAVASCRIPT",
-      period: "",
-      isFile: false
-    },
     {
       title: "강원특별자치도 통합건강증진사업지원단",
       desc: "전자정부프레임워크를 적용하여 웹 사이트를 제작하였습니다.",

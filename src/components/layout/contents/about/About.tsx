@@ -25,13 +25,6 @@ const About = () => {
       hashTag: "#HTML, #CSS, #JAVASCRIPT, #PHOTOSHOP, #ILLUSTRATOR",
     },
     {
-      company: "망고트리",
-      period: "2020. 11 ~ 2021. 02",
-      position: "퍼블리셔",
-      desc: ["4개 이상의 프로젝트를 담당하며 퍼블리싱 역량을 키워나갔습니다."],
-      hashTag: "#HTML, #CSS, #JAVASCRIPT, #PHOTOSHOP",
-    },
-    {
       company: "(주)이앤지테크",
       period: "2021. 03 ~ 2021. 10",
       position: "퍼블리셔",
@@ -49,7 +42,7 @@ const About = () => {
     },
     {
       company: "(주)아이들",
-      period: "2023. 08 ~ 재직중",
+      period: "2023. 08 ~ 2024.06",
       position: "프론트엔드 개발자",
       desc: [
         "아이들 CMS 프로젝트 참여(백엔드, 프론트엔드)",
@@ -57,6 +50,13 @@ const About = () => {
         "전자정부프레임워크를 활용하여 공공기관 프로젝트 참여(프론트엔드)",
       ],
       hashTag: "#REACT, #NEXT.JS, #SPRING BOOT, #RESTFUL API, #JSP",
+    },
+    {
+      company: `[EST] 프론트엔드 개발자 양성과정`,
+      period: "2024. 06 ~ 2024. 10",
+      position: "",
+      desc: ["프론트엔드 개발에 필요한 지식을 습득하고, 프로젝트를 통한 실무 능력 습득"],
+      hashTag: "#HTML, #CSS, #JAVASCRIPT, #REACT, #TYEPSCRIPT",
     },
   ];
 
